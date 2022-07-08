@@ -1,0 +1,185 @@
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
+local venyx = library.new("Kick Off", 5013109572)
+
+-- themes
+local themes = {
+Background = Color3.fromRGB(24, 24, 24),
+Glow = Color3.fromRGB(0, 0, 0),
+Accent = Color3.fromRGB(10, 10, 10),
+LightContrast = Color3.fromRGB(20, 20, 20),
+DarkContrast = Color3.fromRGB(14, 14, 14),  
+TextColor = Color3.fromRGB(255, 255, 255)
+}
+
+-- first page
+local page = venyx:addPage("Main", 5012544693)
+local section1 = page:addSection("Section 1")
+local section2 = page:addSection("Section 2")
+
+section1:addToggle("Auto Goal", nil, function(value)
+if value then
+while value do
+  workspace.MapHolder:GetChildren()[1].BlueGoal.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+    workspace.MapHolder:GetChildren()[1].RedGoal.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+game.Players.LocalPlayer.Character.Humanoid.Changed:Connect(function()
+if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+wait(1)
+end
+end)
+if game.Workspace:FindFirstChild("SoccerBall") then
+ workspace:WaitForChild("SoccerBall").Position = game.Players.LocalPlayer.Character["Right Leg"].Position
+    game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end
+    workspace:WaitForChild("SoccerBall").Position = game.Players.LocalPlayer.Character["Right Leg"].Position
+    game.Players.LocalPlayer.Character.Humanoid.Jump = true
+wait()
+
+end
+    else
+        print("Toggle Off")
+end
+end)
+
+section1:addToggle("Silent Aim", nil, function(value)
+if value then
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+mouse.Button1Down:Connect(function()
+if workspace.SoccerBall.LastKicker == player.Name then
+wait(2)
+if player.Team == "USA" then
+local A_1 = "Kick"
+local A_2 = "Kick"
+local A_3 = game:GetService("Workspace").SoccerBall
+local A_4 = math.random
+local A_5 = workspace.MapHolder:GetChildren()[1].RedGoal.Position + Vector3.new(10,10,10)
+local A_6 = workspace.MapHolder:GetChildren()[1].RedGoal.Position + Vector3.new(25,25,25)
+local A_7 = workspace.MapHolder:GetChildren()[1].RedGoal.Position + Vector3.new(10,10,10)
+game.ReplicatedStorage.MasterKey:FireServer(A_1, A_2, A_3, A_4, A_5, A_6, A_7)
+elseif player.Team == "Brazil" then
+local A_1 = "Kick"
+local A_2 = "Kick"
+local A_3 = game:GetService("Workspace").SoccerBall
+local A_4 = math.random
+local A_5 = workspace.MapHolder:GetChildren()[1].BlueGoal.Position + Vector3.new(10,10,10)
+local A_6 = workspace.MapHolder:GetChildren()[1].BlueGoal.Position + Vector3.new(25,25,25)
+local A_7 = workspace.MapHolder:GetChildren()[1].BlueGoal.Position + Vector3.new(10,10,10)
+end
+end
+end)
+else
+venyx:Notify("Silent Aim turned off.")
+end
+end)
+section1:addButton("Rejoin", function()
+local TeleportService = game:GetService("TeleportService")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+local Rejoin = coroutine.create(function()
+    local Success, ErrorMessage = pcall(function()
+        TeleportService:Teleport(game.PlaceId, LocalPlayer)
+    end)
+
+    if ErrorMessage and not Success then
+        warn(ErrorMessage)
+    end
+end)
+
+coroutine.resume(Rejoin)
+end)
+section1:addTextbox("Notification", "Default", function(value, focusLost)
+print("Input", value)
+
+if focusLost then
+venyx:Notify("Title", value)
+end
+end)
+
+section2:addKeybind("Toggle Keybind", Enum.KeyCode.RightShift, function()
+print("Activated Keybind")
+venyx:toggle()
+end, function()
+print("Changed Keybind")
+end)
+section2:addSlider("Walkspeed", 0, -100, 100, function(value)
+if game.Players.LocalPlayer.Character:FindFirstChild("AntiSpeedHack") then
+game.Players.LocalPlayer.Character.AntiSpeedHack:Destroy()
+end
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+end)
+section2:addSlider("Reach", 0, 0, 75, function(value)
+local part
+if game.Workspace:FindFirstChild("SpecialReachPart") then
+part = game.Workspace.SpecialReachPart
+else
+part = Instance.new("Part")
+end
+part.Name = "SpecialReachPart"
+part.Anchored = false
+local weld = Instance.new("Weld")
+weld.Parent = part
+local player = game.Players.LocalPlayer
+local character = player.Character
+part.Parent = game.Workspace
+part.Size = Vector3.new(value,8,value)
+part.CanCollide = false
+weld.Part1 = character.Torso
+weld.Part0 = part
+part.Transparency = 0.5
+part.Massless = true
+part.Touched:Connect(function(hit)
+if hit.Name == "SoccerBall" then
+hit.Position = character.HumanoidRootPart.Position
+end
+end)
+end)
+section2:addButton("Goal", function()
+if game.Workspace:FindFirstChild("SoccerBall") then
+ workspace:WaitForChild("SoccerBall").Position = game.Players.LocalPlayer.Character["Right Leg"].Position
+    game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end
+    workspace:WaitForChild("SoccerBall").Position = game.Players.LocalPlayer.Character["Right Leg"].Position
+    game.Players.LocalPlayer.Character.Humanoid.Jump = true
+workspace.MapHolder:GetChildren()[1].BlueGoal.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+    workspace.MapHolder:GetChildren()[1].RedGoal.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+end)
+section2:addButton("Grab Ball", function()
+if workspace:FindFirstChild("SoccerBall") then
+local A_1 = "Kick"
+local A_2 = "Kick"
+local A_3 = game:GetService("Workspace").SoccerBall
+local A_4 = math.random
+local A_5 = Vector3.new(math.random, math.random, math.random)
+local A_6 = Vector3.new(math.random, math.random, math.random)
+local A_7 = Vector3.new(math.random, math.random, math.random)
+game.ReplicatedStorage.MasterKey:FireServer(A_1, A_2, A_3, A_4, A_5, A_6, A_7)
+wait(1)
+A_3.Position = game.Players.LocalPlayer.Character.Torso.Position
+end
+end)
+section2:addButton("Trickshot", function()
+if workspace:FindFirstChild("SoccerBall") then
+local A_1 = "Kick"
+local A_2 = "Kick"
+local A_3 = game:GetService("Workspace").SoccerBall
+local A_4 = math.random
+local A_5 = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(10,10,10)
+local A_6 = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(25,25,25)
+local A_7 = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(10,10,10)
+game.ReplicatedStorage.MasterKey:FireServer(A_1, A_2, A_3, A_4, A_5, A_6, A_7)
+end
+end)
+
+-- second page
+local theme = venyx:addPage("Theme", 5012544693)
+local colors = theme:addSection("Colors")
+
+for theme, color in pairs(themes) do -- all in one theme changer, i know, im cool
+colors:addColorPicker(theme, color, function(color3)
+venyx:setTheme(theme, color3)
+end)
+end
+
+-- load
+venyx:SelectPage(venyx.pages[1], true)
