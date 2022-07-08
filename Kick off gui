@@ -176,7 +176,7 @@ local playergui = player.PlayerGui
 if player.PlayerGui:FindFirstChild("StaminaGui") then
 local staminagui = playergui.StaminaGui
 while player.PlayerGui:FindFirstChild("StaminaGui") do
-wait()
+wait(.5)
 staminagui.Scroll.Size = UDim2.new(384, 30.6667)
 end
 end
@@ -187,7 +187,7 @@ local playergui = player.PlayerGui
 if player.PlayerGui:FindFirstChild("TrickshotGui") then
 local staminagui = playergui.TrickshotGui
 while player.PlayerGui:FindFirstChild("TrickshotGui") do
-wait()
+wait(.5)
 staminagui.Charged.Value = true
 staminagui.Scroll.Size = UDim2.new(384.637, 30.6667)
 end
