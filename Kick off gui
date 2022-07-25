@@ -112,7 +112,7 @@ end)
 section2:addSlider("Reach", 0, 0, 75, function(value)
 local part
 if game.Workspace:FindFirstChild("SpecialReachPart") then
-part:Destroy()
+game.Workspace:FindFirstChild("SpecialReachPart"):Destroy()
 part = Instance.new("Part")
 else
 part = Instance.new("Part")
@@ -132,7 +132,7 @@ part.Transparency = 0.5
 part.Massless = true
 part.Touched:Connect(function(hit)
 if hit.Name == "SoccerBall" then
-hit.Position = character.HumanoidRootPart.Position
+hit.Position = character.Torso.Position
 end
 end)
 end)
