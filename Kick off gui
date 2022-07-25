@@ -112,7 +112,8 @@ end)
 section2:addSlider("Reach", 0, 0, 75, function(value)
 local part
 if game.Workspace:FindFirstChild("SpecialReachPart") then
-part = game.Workspace.SpecialReachPart
+part:Destroy()
+part = Instance.new("Part")
 else
 part = Instance.new("Part")
 end
