@@ -22,7 +22,7 @@ local page2 = venyx:addPage("Fun", 5012544693)
 local section12 = page2:addSection("Section 1")
 
 local page3 = venyx:addPage("Streamer mode", 5012544693)
-local section13 = apge3:addSection("Section 1")
+local section13 = page3:addSection("Section 1")
 
 section1:addToggle("Auto Goal", nil, function(value)
 if value then
