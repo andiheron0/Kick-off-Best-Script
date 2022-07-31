@@ -138,11 +138,23 @@ part.Touched:Connect(function(hit)
 if hit.Name == "SoccerBall" then
 if not cooldown then
 cooldown = true
+hit.Touched:Connect(function(touched)
+if touched.Parent == character then
 hit.CanCollide = false
+else
+hit.CanCollide = true
+end
+end)
 hit.Position = character.Torso.Position
 else
 delay(0.1, function()
+hit.Touched:Connect(function(touched)
+if touched.Parent == character then
+hit.CanCollide = false
+else
 hit.CanCollide = true
+end
+end)
 cooldown = false
 end)
 end
