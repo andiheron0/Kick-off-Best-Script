@@ -141,7 +141,7 @@ cooldown = true
 hit.CanCollide = false
 hit.Position = character.Torso.Position
 else
-delay(0.5, function()
+delay(0.1, function()
 hit.CanCollide = true
 cooldown = false
 end)
