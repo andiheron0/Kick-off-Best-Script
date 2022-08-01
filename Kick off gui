@@ -150,7 +150,7 @@ end
 end)
 hit.Position = character.Torso.Position
 else
-delay(0.1, function()
+delay(0.5, function()
 hit.Touched:Connect(function(touched)
 if touched.Parent == character then
 hit.CanCollide = false
