@@ -24,6 +24,16 @@ local section12 = page2:addSection("Section 1")
 local page3 = venyx:addPage("Streamer", 5012544693)
 local section13 = page3:addSection("Section 1")
 
+
+local page4 = venyx:addPage("Celebrations", 5012544693)
+
+local section14 = page4:addSection("Section 1")
+
+
+local page5 = venyx:addPage("Passing", 5012544693)
+
+local section15 = page5:addSection("Section 1")
+
 section1:addToggle("Auto Goal", nil, function(value)
 if value then
 while value do
