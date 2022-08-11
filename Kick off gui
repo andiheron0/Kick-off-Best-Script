@@ -36,6 +36,8 @@ local section15 = page5:addSection("Section 1")
 
 section15:addToggle("Auto Passing TEST", nil, function(value)
 
+venyx:Notify("ERROR: This code can only be recieved if nothing has loaded. This means that this is an empty text of code currently. Expect this to be fixed by August 11th")
+
 end)
 
 section1:addToggle("Auto Goal", nil, function(value)
