@@ -37,6 +37,7 @@ local section15 = page5:addSection("Section 1")
 
 section15:addToggle("Auto Passing TEST", nil, function(value)
 print(value)
+wait()
 end)
 
 section1:addToggle("Auto Goal", nil, function(value)
