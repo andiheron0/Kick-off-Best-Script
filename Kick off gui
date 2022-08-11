@@ -35,27 +35,10 @@ local page5 = venyx:addPage("Passing", 5012544693)
 local section15 = page5:addSection("Section 1")
 
 section15:addToggle("Auto Passing TEST", nil, function(value)
+while value do
 
-if value then
-local players = game.Players:GetPlayers()
-local cPlayer = players[math.random(1, #players)]
-
-if cPlayer then
-if cPlayer.Team == game.LocalPlayer.Team then
-if workspace:FindFirstChild("SoccerBall") then
-local A_1 = "Kick"
-local A_2 = "Kick"
-local A_3 = game:GetService("Workspace").SoccerBall
-local A_4 = math.random
-local A_5 = cPlayer.Character.HumanoidRootPart.Position + Vector3.new(10,10,10)
-local A_6 = cPlayer.Character.HumanoidRootPart.Position + Vector3.new(25,25,25)
-local A_7 = cPlayer.Character.HumanoidRootPart.Position + Vector3.new(10,10,10)
-game.ReplicatedStorage.MasterKey:FireServer(A_1, A_2, A_3, A_4, A_5, A_6, A_7)
+wait()
 end
-end
-end
-end
-
 end)
 
 section1:addToggle("Auto Goal", nil, function(value)
