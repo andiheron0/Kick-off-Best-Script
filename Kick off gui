@@ -34,7 +34,7 @@ local page5 = venyx:addPage("Passing", 5012544693)
 
 local section15 = page5:addSection("Section 1")
 
-section15:addToggle("Auto Passing TEST", nil, function(value)
+--[[section15:addToggle("Auto Passing TEST", nil, function(value)
 if workspace:FindFirstChild("SoccerBall") then
 while value do
 if not value then
@@ -72,7 +72,7 @@ game.ReplicatedStorage.MasterKey:FireServer(A_1, A_2, A_3, A_4, A_5, A_6, A_7)
 end
 
 
-end)
+end)]]
 
 section1:addToggle("Auto Goal", nil, function(value)
 if value then
