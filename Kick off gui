@@ -68,7 +68,6 @@ local A_5 = playersCharacter.HumanoidRootPart.Position + Vector3.new(10,10,10)
 local A_6 = playersCharacter.HumanoidRootPart.Position + Vector3.new(25,25,25)
 local A_7 = playersCharacter.HumanoidRootPart.Position + Vector3.new(10,10,10)
 game.ReplicatedStorage.MasterKey:FireServer(A_1, A_2, A_3, A_4, A_5, A_6, A_7)
-end
 
 
 end)
