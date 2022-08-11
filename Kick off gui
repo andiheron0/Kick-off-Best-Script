@@ -41,13 +41,13 @@ if value then
 con = true
 while value do
 
+print(value)
+
 if con == false then
 break
 end
 
 if workspace:FindFirstChild("SoccerBall") then
-
-print(value)
 
 local A_1 = "Kick"
 local A_2 = "Kick"
@@ -58,6 +58,12 @@ local A_6 = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vecto
 local A_7 = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(10,10,10)
 game.ReplicatedStorage.MasterKey:FireServer(A_1, A_2, A_3, A_4, A_5, A_6, A_7)
 end
+
+wait()
+
+else
+
+print(value)
 
 wait()
 end
