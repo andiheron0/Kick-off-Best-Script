@@ -37,6 +37,9 @@ local section15 = page5:addSection("Section 1")
 local con = false
 
 section15:addToggle("Auto Passing TEST", nil, function(value)
+
+print(value)
+
 if value then
 con = true
 while value do
