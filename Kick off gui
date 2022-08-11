@@ -36,8 +36,7 @@ local section15 = page5:addSection("Section 1")
 
 section15:addToggle("Auto Passing TEST", nil, function(value)
 while value do
-if not value then
-break
+if nil then
 end
 wait()
 end
