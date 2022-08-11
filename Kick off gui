@@ -277,7 +277,13 @@ end)
 section13:addToggle("Hide Reach", nil, function(value)
 if value then
 if game.Workspace:FindFirstChild("SpecialReachPart") then
+while value do
+if not value then
+break
+end
 game.Workspace.SpecialReachPart.Transparency = 1
+wait()
+end
 end
 else
     game.Workspace.SpecialReachPart.Transparency = 0.5
