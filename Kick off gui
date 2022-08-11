@@ -46,6 +46,9 @@ break
 end
 
 if workspace:FindFirstChild("SoccerBall") then
+
+print(value)
+
 local A_1 = "Kick"
 local A_2 = "Kick"
 local A_3 = game:GetService("Workspace").SoccerBall
