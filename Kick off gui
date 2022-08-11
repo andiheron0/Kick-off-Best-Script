@@ -46,6 +46,11 @@ local A_6 = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vecto
 local A_7 = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(10,10,10)
 game.ReplicatedStorage.MasterKey:FireServer(A_1, A_2, A_3, A_4, A_5, A_6, A_7)
 end
+
+if not value then
+break
+end
+
 wait()
 end
 end)
