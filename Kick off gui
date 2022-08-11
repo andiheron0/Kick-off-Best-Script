@@ -36,7 +36,7 @@ local section15 = page5:addSection("Section 1")
 
 
 section15:addToggle("Auto Passing TEST", nil, function(value)
-venyx:Notify("DEPRECATED")
+
 end)
 
 section1:addToggle("Auto Goal", nil, function(value)
