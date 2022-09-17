@@ -40,6 +40,7 @@ task.wait(3)
 
 
 section15:addToggle("Auto Passing TEST", nil, function(value)
+while value do
 for i,v in pairs(game.Players:GetPlayers()) do
 if v.Team == game.Players.LocalPlayer.Team then
 local A_1 = "Kick"
@@ -51,6 +52,11 @@ local A_6 = workspace.SoccerBall.Position = v.Character.HumanoidRootPart.Positio
 local A_7 = workspace.SoccerBall.Position = v.Character.HumanoidRootPart.Position
 game.ReplicatedStorage.MasterKey:FireServer(A_1, A_2, A_3, A_4, A_5, A_6, A_7)
 end
+end
+if not value then
+break
+end
+wait()
 end
 end)
 
