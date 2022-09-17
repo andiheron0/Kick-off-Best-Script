@@ -34,9 +34,24 @@ local page5 = venyx:addPage("Passing", 5012544693)
 
 local section15 = page5:addSection("Section 1")
 
+venyx:Notify("Loading, this may take up to 10 seconds.")
+
+task.wait(3)
+
 
 section15:addToggle("Auto Passing TEST", nil, function(value)
-
+for i,v in pairs(game.Players:GetPlayers()) do
+if v.Team == game.Players.LocalPlayer.Team then
+local A_1 = "Kick"
+local A_2 = "Kick"
+local A_3 = game:GetService("Workspace").SoccerBall
+local A_4 = math.random
+local A_5 = workspace.SoccerBall.Position = v.Character.HumanoidRootPart.Position
+local A_6 = workspace.SoccerBall.Position = v.Character.HumanoidRootPart.Position
+local A_7 = workspace.SoccerBall.Position = v.Character.HumanoidRootPart.Position
+game.ReplicatedStorage.MasterKey:FireServer(A_1, A_2, A_3, A_4, A_5, A_6, A_7)
+end
+end
 end)
 
 section1:addToggle("Auto Goal", nil, function(value)
@@ -62,6 +77,8 @@ end
         print("Toggle Off")
 end
 end)
+
+task.wait(1)
 
 section1:addToggle("Silent Aim", nil, function(value)
 if value then
@@ -118,6 +135,8 @@ if focusLost then
 venyx:Notify("Title", value)
 end
 end)
+
+task.wait(1)
 
 section2:addKeybind("Toggle Keybind", Enum.KeyCode.RightShift, function()
 print("Activated Keybind")
@@ -179,6 +198,9 @@ end
 end
 end)
 end)
+
+task.wait(1)
+
 section2:addButton("Goal", function()
 if game.Workspace:FindFirstChild("SoccerBall") then
  workspace:WaitForChild("SoccerBall").Position = game.Players.LocalPlayer.Character["Right Leg"].Position
@@ -245,6 +267,8 @@ end
 end
 end)
 
+task.wait(1)
+
 section12:addButton("Bring huge soccerball", function()
 game.Workspace.Lobby.Outside.BallHolder.OutsideBall.Position = game.Workspace.andiheron0.HumanoidRootPart.Position
 end)
@@ -252,6 +276,8 @@ end)
 section12:addButton("Infinite yield", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
 end)
+
+task.wait(1)
 
 section12:addButton("Reviz Admin", function()
 loadstring(game:HttpGet('https://pastebin.com/ibFPdiF7'))()
@@ -283,6 +309,8 @@ workspace:FindFirstChild("SpecialReachPart").Transparency = 0.5
 end
 end)
 
+task.wait(1)
+
 -- second page
 local theme = venyx:addPage("Theme", 5012544693)
 local colors = theme:addSection("Colors")
@@ -294,6 +322,9 @@ end)
 end
 
 -- load
+
+task.wait(1)
+
 venyx:SelectPage(venyx.pages[1], true)
 
 end
